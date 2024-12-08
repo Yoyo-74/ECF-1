@@ -104,6 +104,8 @@ main{
 
     overflow: hidden;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     height: 100%;
 }
@@ -126,7 +128,7 @@ main{
 }
 
 
-/*_________________________________________________________________*/
+/*_____Background Générique quelques soit la page html.___(cf. main.js)____*/
 
 .background{ 
     background-size: cover; /* S'assure que l'image couvre tout l'élément */ 
@@ -139,5 +141,177 @@ main{
 #mars{
     background-position: center; 
 }
+
+/* Grille ____________________________________*/
+
+.canada-container, .bresil-container, .maroc-container, .tunisie-container{
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sejour-item{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.sejour-item img{
+    width: 100%;
+    height: auto;
+}
+
+.sejour-item p{
+    padding: 10px;
+    margin: 0;
+}
+
+@media (min-width: 600px){
+    .canada-container, .maroc-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .bresil-container, .tunisie-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px){
+    .canada-container, .maroc-container, .tunisie-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* footer_________________________________*/
+
+
+
+.footer {
+    background-color: darkblue;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 1rem;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #777;
+    padding-bottom: 5px;
+}
+
+.section p, .section a {
+    margin: 5px 0;
+    color: #bbb;
+    text-decoration: none;
+}
+
+.section a:hover {
+    color: orangered;
+    text-decoration: underline;
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section ul li {
+    margin: 5px 0;
+}
+
+@media (max-width: 760px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+/*______ Formulaire _______________*/
+
+
+.formulaire{
+    font-family: sans-serif;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: darkblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: orangered;
+    color: darkblue;
+}
+
+/* @media (max-width: 600px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    input, button {
+        padding: 8px;
+    }
+} */
 
 
